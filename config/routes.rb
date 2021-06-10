@@ -34,4 +34,8 @@ Rails.application.routes.draw do
 
   resources :messages, only: [:show, :create] # DM機能
 
+  resources :groups do
+    get "join" => "groups#join"
+  end
+
 end
