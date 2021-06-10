@@ -18,6 +18,7 @@ class BooksController < ApplicationController
       }
     @book = Book.new
     @user = current_user
+    @books = Book.all.order(params[:sort])
   end
 
   def create
