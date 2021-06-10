@@ -32,7 +32,6 @@ Rails.application.routes.draw do
 
   resources :groups # グループ機能
 
-  resources :messages, only: [:create] # DM機能
-  resources :rooms, only: [:create,:show]
+  resources :messages, only: [:show, :create] # DM機能
 
 end
