@@ -21,6 +21,9 @@ class User < ApplicationRecord
   has_many :group_users
   has_many :groups, through: :group_users
 
+  has_many :messages, dependent: :destroy
+  has_many :entries, dependent: :destroy
+
   # フォローする
   def follow(other_user)
     active_relationships.create(followed_id: other_user.id)
